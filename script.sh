@@ -15,27 +15,45 @@ PATH_CDN_TESTING="/var/www/localhost/htdocs/files/ffnw/firmware/l2tp/testing"
 PATH_CDN_EXPERIMENTAL="/var/www/localhost/htdocs/files/ffnw/firmware/l2tp/experimental"
 CDN_SERVER="192.168.66.203"
 
-IMG_X86_STABLE="https://firmware.ffnw.de/l2tp/stable/factory/gluon-ffnw-20210427-x86-generic.img.gz"
+#IMG_X86_STABLE="https://firmware.ffnw.de/l2tp/stable/factory/gluon-ffnw-20210427-x86-generic.img.gz"
 VMID_X86_STABLE=130
 
-IMG_X86_X64_STABLE="https://firmware.ffnw.de/l2tp/stable/factory/gluon-ffnw-20210427-x86-64.img.gz"
+#IMG_X86_X64_STABLE="https://firmware.ffnw.de/l2tp/stable/factory/gluon-ffnw-20210427-x86-64.img.gz"
 VMID_X86_X64_STABLE=127
 
-IMG_X86_TESTING="https://firmware.ffnw.de/l2tp/testing/factory/gluon-ffnw-20180709_testing-x86-generic.img.gz"
+#IMG_X86_TESTING="https://firmware.ffnw.de/l2tp/testing/factory/gluon-ffnw-20180709_testing-x86-generic.img.gz"
 VMID_X86_TESTING=129
 
-IMG_X86_X64_TESTING="https://firmware.ffnw.de/l2tp/testing/factory/gluon-ffnw-20180709_testing-x86-64.img.gz"
+#IMG_X86_X64_TESTING="https://firmware.ffnw.de/l2tp/testing/factory/gluon-ffnw-20180709_testing-x86-64.img.gz"
 VMID_X86_X64_TESTING=128
 
-IMG_X86_EXPERIMENTAL="https://firmware.ffnw.de/l2tp/nightly/master/gluon-ffnw-20210813-x86-generic.img.gz"
+#IMG_X86_EXPERIMENTAL="https://firmware.ffnw.de/l2tp/nightly/master/gluon-ffnw-20210813-x86-generic.img.gz"
 VMID_X86_EXPERIMENTAL=132
 
-IMG_X86_X64_EXPERIMENTAL="https://firmware.ffnw.de/l2tp/nightly/master/gluon-ffnw-20210813-x86-64.img.gz"
+#IMG_X86_X64_EXPERIMENTAL="https://firmware.ffnw.de/l2tp/nightly/master/gluon-ffnw-20210813-x86-64.img.gz"
 VMID_X86_X64_EXPERIMENTAL=131
 
 PROXMOX_VMID_START=127
 PROXMOX_VMID_STOP=132
 PROXMOX_NODE="proxmox01"
+
+echo "Enter X86 Stable URL: "
+read IMG_X86_STABLE
+
+echo "Enter X86_X64 Stable URL: "
+read IMG_X86_X64_STABLE
+
+echo "Enter X86 Testing URL: "
+read IMG_X86_TESTING
+
+echo "Enter X86_X64 Testing URL: "
+read IMG_X86_X64_TESTING
+
+echo "Enter X86 Experimental URL: "
+read IMG_X86_EXPERIMENTAL
+
+echo "Enter X86_X64 Experimental URL: "
+read IMG_X86_X64_EXPERIMENTAL
 
 echo "CONVERT QCOW2 TO RAW"
 for VMID in $(seq $PROXMOX_VMID_START $PROXMOX_VMID_STOP)
